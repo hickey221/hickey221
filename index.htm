@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Betsy & Travis | Lexington Map</title>
+<!--       <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 800px;
+                height: 500px;
+            }
+        </style> -->
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+      <link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="mapstyle.css" type="text/css" media="all">
+      <script src="modernizr.js"></script>
+   </head>
+   <body>
+      <div id="map" class="map desk-three-forth"></div>
+
+<script>
+
+function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat: 38.009355850683846, lng: -84.58842535414738},
+    styles: [
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 33
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#6a6260"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#efefef"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#d6d9df"
+            },
+            {
+                "lightness": "64"
+            },
+            {
+                "saturation": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "hue": "#0055ff"
+            },
+            {
+                "lightness": "45"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#83a5b0"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#839690"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": "0"
+            },
+            {
+                "hue": "#ff2a00"
+            },
+            {
+                "saturation": "-81"
+            },
+            {
+                "gamma": "0.53"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#bdcdd3"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#bcceb8"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#839690"
+            },
+            {
+                "lightness": "-24"
+            },
+            {
+                "gamma": "1"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "weight": "2.62"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#bcceb8"
+            },
+            {
+                "weight": "0.39"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#b5cbe4"
+            }
+        ]
+    }
+]
+               
+   });
+   var icon = {
+      // Dummy placeholder
+   }
+   var baricon = {
+      url:'images/martini.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var barrelicon = {
+      url:'images/barrel.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var foodicon = {
+      url:'images/food.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var burgericon = {
+      url:'images/burger.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var pinkburgericon = {
+      url:'images/burgerpink.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var pizzaicon = {
+      url:'images/pizza.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var wineicon = {
+      url:'images/wine.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var tenticon = {
+      url:'images/tent.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var balloonicon = {
+      url:'images/balloon.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var churchicon = {
+      url:'images/church.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+   var houseicon = {
+      url:'images/house.png',
+      size: new google.maps.Size(40, 40),
+      scaledSize: new google.maps.Size(40, 40)
+   }
+
+   var locations = [
+      //Syntax: [name, lat, long, label, icon, link, blurb]
+      // Food
+      ['Dudley\'s On Short', 38.04844, -84.49776, 'B1',foodicon,'http://dudleysonshort.com/','259 W Short St #125. High-end restaurant with seasonal menus and local ingredients.'],
+      ['Lockbox', 38.04726, -84.49756, 'B2',foodicon,'lockboxlex.com','167 W Main St. High-end dining with a soulful twist in an historic building.'],
+      ['Pies & Pints', 38.04939, -84.5002, 'B3',pizzaicon,'http://piesandpints.net/menu/','401 W Main St #106. Local chain slinging classic and specialty pizzas.'],
+      ['NiceNpan', 38.03822, -84.50736, 'B5',foodicon,'http://www.nicenpan.com/','547 S Limestone. Brunch, lunch, and ice cream close to UK campus.'],
+      ['Stella\'s Kentucky Deli', 38.05282, -84.50199, 'B6', foodicon,'http://www.stellaskentuckydeli.com/','143 Jefferson St. Casual dining with a cute patio in a quaint historical home.'],
+      ['The Village Idiot', 38.0489, -84.49826, 'B7', foodicon,'http://www.lexingtonvillageidiot.com/','307 W Short St. Gastropub with local drinks and a fun weekend brunch.'],
+      ['First Watch', 38.03676, -84.51764, 'B8', foodicon,'http://www.firstwatch.com/menu/','1080 S Broadway #301. Casual brunch/lunch near the hotel, open 7 days.'],
+      ['AP Suggin’s Bar & Grill', 38.01932, -84.48582, 'B9', foodicon,'http://www.suggins.com/','345 Romany Rd. Local tavern with a great patio and southern hospitality.'],
+      ['Northlime Coffee & Donuts', 38.05395, -84.48657, 'B10', foodicon,'http://www.northlimelex.com/','575 N Limestone. Specialty donuts available every day.'],
+      ['Ramsey’s Diner', 38.00905, -84.51889, 'B11', foodicon,'http://ramseysdiners.com/','151 W Zandale. Classic diner food and country store.'],
+      
+      //Drinks
+      ['Woodford Reserve Distillery', 38.11308, -84.81081, 'A1', barrelicon,'http://www.woodfordreserve.com/distillery/tours/','7855 McCracken Pike, Versailles. Daily bourbon tours start at $14'],
+      ['Buffalo Trace Distillery', 38.21669, -84.87088, 'A2', barrelicon,'http://www.buffalotracedistillery.com/visit-us/driving-directions','113 Great Buffalo Trace, Frankfort. Complimentary bourbon tours offered daily.'],
+      ['Four Roses Distillery', 37.97361, -84.8979, 'A3', barrelicon,'http://fourrosesbourbon.com/visit-the-distillery/','1224 Bonds Mill Rd, Lawrenceburg. Daily bourbon tours start at $5.'],
+      ['Bluegrass Distillers', 38.05978, -84.49189, 'A4', barrelicon,'http://www.bluegrassdistillers.com/','501 W 6th St #165. Craft bourbon distillery near downtown, tastings start at $5.'],
+      ['Wild Turkey Distillery', 38.04356, -84.853, 'A5', barrelicon,'http://wildturkeybourbon.com/visit-us/','1417 Versailles Rd, Lawrenceburg. Daily bourbon tours start at $10.'],
+      ['HopCat', 38.0497, -84.49957, 'A6', baricon,'https://hopcat.com/lexington','410 W Short St. Brewpub with 100+ beers on tap and weekend brunch.'],
+      ['Henry Clay\'s Public House', 38.04735, -84.49747, 'A7', baricon,'http://www.henryclayspublichouse.com/','112 N Upper St. Dive bar with no-cover live music, open Tues-Sat.'],
+      ['West Sixth Greenroom', 38.04659, -84.49707, 'A8', baricon,'https://www.westsixth.com/the-west-sixth-greenroom','109 W Main St. Local brewery tasting room, open Thurs-Sun.'],
+      ['Talon Winery & Vineyards', 37.90947, -84.44481, 'A9', wineicon,'http://www.talonwine.com/','7086 Tates Creek Rd. Picturesque local winery with tastings 7 days/week.'],
+
+      //Wedding activities
+      ['Shirey House', 38.0039, -84.49413, 'A', tenticon,'betsyandtravis.com','The Shirey Home! Located at 3085 Montavesta Rd.'],
+      ['The Round Barn Stable of Memories', 38.04091, -84.51743, 'B', tenticon,'http://www.bayoubluegrass.com/','Reception location, at 1200 Red Mile Rd.'],
+      ['Holiday Inn Express & Suites ', 38.03611, -84.51361, 'C', houseicon,'https://www.ihg.com/holidayinnexpress/hotels/us/en/lexington/lexky/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-USA-_-LEXKY','1000 Export St. Location of hotel rooms.'],
+      ['Girls\' Airbnb', 38.05156, -84.49513, 'D', houseicon,' ','Girls\' Airbnb location, located at 318 W 3rd St.'],
+      ['Boys\' Airbnb', 38.05672, -84.65519, 'E', houseicon,' ','Boys\' Aitrbnb location, located at 15 Pisgah Station Rd'],
+      ['Sawyer\'s Downtown', 38.04871, -84.49915, 'B4', pinkburgericon,'https://www.facebook.com/Sawyers-Downtown-Bar-Grill-491414770920862/','Best burgers in Lexington!'],
+
+      // Attractions
+      ['Lexington Farmers\' Market', 38.04805, -84.49808, 'D1', balloonicon,'http://www.lexingtonfarmersmarket.com/','249 W Main St. Downtown location open Sat from 7am-2pm.'],
+      ['Kentucky Horse Park', 38.14999, -84.52064, 'D2', balloonicon,'http://www.kyhorsepark.com/visit/park-info-resources/tickets-and-pricing','4089 Iron Works Pkwy. Huge park where you can get close to horses, with shows and exhibits. Tickets are $20/adult.'],
+      ['Shaker Village of Pleasant Hill', 37.81674, -84.7406, 'D3', balloonicon,'https://shakervillageky.org/','3501 Lexington Rd, Harrodsburg. This 3000-acre landmark destination embodies the spirit of the KY Shakers.'],
+      ['University of Kentucky Arboretum', 38.01565, -84.50517, 'D4', balloonicon,'http://arboretum.ca.uky.edu/home','500 Alumni Dr. Stroll through the beautiful gardens on UK’s campus; guided tour on Fri for $3.'],
+      ['Mary Todd Lincoln House', 38.05124, -84.50278, 'D5', balloonicon,'http://www.mtlhouse.org/Visitors.html','578 W Main St. Explore her childhood home, open Mon-Sat.'],
+      ['Kentucky Theatre', 38.04432, -84.49524, 'D6', balloonicon,'http://www.kentuckytheater.com/','214 E Main St. Restored historic movie theatre, all tickets $6.'],
+      ['Explorium of Lexington', 38.05, -84.50002, 'D7', balloonicon,'http://explorium.com/visit','440 W Short St. Hands-on children’s museum, all tickets $8.'],
+      ['Ashland Henry Clay Estate', 38.02927, -84.47997, 'D8', balloonicon,'http://henryclay.org/visit/','120 Sycamore Rd. Guided, hour-long tours of the historic mansion, open Tues-Sat tickets are $12/adult.'],
+      ['Waveland State Historic Site', 37.97077, -84.53676, 'D9', balloonicon,'http://parks.ky.gov/parks/historicsites/waveland/','225 Waveland Museum Ln. Tour the antebellum mansion and grounds, Wed-Sun for $7.'],
+      ['McConnell Springs', 38.05497, -84.5278, 'D10', balloonicon,'https://www.lexingtonky.gov/mcconnell-springs-park','416 Rebmann Ln. Small park with trails, natural springs, and a 250-year-old oak.'],
+      ['Raven Run Nature Sanctuary', 37.88982, -84.39581, 'D11', balloonicon,'http://www.ravenrun.org/','3885 Raven Run Way. This free city park provides over 10 miles of easy to moderate hiking trails.'],
+      ['Gratz Park', 38.05014, -84.49534, 'D12', balloonicon,'https://www.nps.gov/nr/travel/lexington/gra.htm','Cute park near downtown.'],
+      ['Keeneland Race Track', 38.04825, -84.60482, 'D13', balloonicon,'http://www.keeneland.com/discover/tours','4201 Versailles Rd. Guided, hour-long walking tours of the racetrack, all tickets $8.'],
+      ['Central Christian Church', 38.04505, -84.49364, 'D14', churchicon,'http://www.centralchristianlex.org/','205 E Short St. Shirey family church, services Sun at 8:30 and 11am.']
+   ];
+
+   locations.forEach( function( element, index ){  
+      var marker = new google.maps.Marker({
+         position: {lat:element[1], lng:element[2]},
+         map: map,
+         title: element[0],
+         //label: element[3],
+         icon: element[4]
+      });
+      var infowindow = new google.maps.InfoWindow({
+         content: '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h1 id="firstHeading" class="firstHeading">'+element[0]+'</h1>'+
+                    '<div id="bodyContent">'+
+                    element[6]+
+                    '<p>Link: <a href='+element[5]+'>'+element[5]+'</a></p>'+
+                    '</div>'+
+                    '</div>'
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+         infowindow.open(map, marker);
+      });
+   });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa9HelOv906cElnB1P4ayN76LM5RpmVVs&callback=initMap" async defer></script>
+
+</body>
+</html>
