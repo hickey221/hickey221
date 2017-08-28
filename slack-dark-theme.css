@@ -21,7 +21,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 
 #msg_input, #primary_file_button {
   background: transparent !important;
-  color: #eee !important;
+  color: hsl(207, 82%, 66%) !important;
   border-color: #444 !important;
 }
 
