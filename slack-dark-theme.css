@@ -2,7 +2,7 @@
 #search_terms, #client_body, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
-  background: #333 !important;
+  background: hsl(220,13,18) !important;
 }
 
 #client_body::before {
@@ -34,7 +34,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 ts-message:hover, .day_divider .day_divider_label {
-  background: #333 !important;
+  background: hsl(220,13,18) !important;
 }
 
 #messages_container::after {
@@ -70,7 +70,7 @@ ts-message .action_hover_container .btn_msg_action,
 #search_filters a,
 .menu,
 .menu #menu_items_scroller{
-  background: #333 !important;
+  background: hsl(220,13,18) !important;
 }
 
 pre,
@@ -86,7 +86,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 #quick_switcher_btn{
-  border-top-color: #333 !important;
+  border-top-color: hsl(220,13,18) !important;
 }
 
 .rxn,
