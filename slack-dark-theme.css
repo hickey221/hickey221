@@ -11,7 +11,7 @@ ts-jumper input[type="text"],
 
 ts-message, .channel_title .channel_name, ts-jumper input[type="text"],
 ts-jumper ol li .member_real_name, ts-jumper ol li .view_name, ts-jumper ol li .channel_name { 
-  color: #eee !important;
+  color: #7C879C !important;
 }
 
 .light_theme ts-message .message_content a.message_sender, #msg_input::-webkit-input-placeholder,
@@ -134,7 +134,7 @@ a, a:link, a:visited{
   color: #a0ccff !important;
 }
 ts-message a .mention{
-  color: #aff !important;
+  color: #56B6C2 !important;
 }
 a:hover{
   color: #00aef9 !important;
