@@ -2,7 +2,7 @@
 #search_terms, #client_body, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
-  background: #282C34 !important;
+  background: #7C879C !important;
 }
 
 #client_body::before {
@@ -21,7 +21,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 
 #msg_input, #primary_file_button {
   background: transparent !important;
-  color: #282C34 !important;
+  color: #7C879C !important;
   border-color: #444 !important;
 }
 
