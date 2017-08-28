@@ -2,7 +2,7 @@
 #search_terms, #client_body, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
-  background: #7C879C !important;
+  background: #282C34 !important;
 }
 
 #client_body::before {
@@ -16,7 +16,7 @@ ts-jumper ol li .member_real_name, ts-jumper ol li .view_name, ts-jumper ol li .
 
 .light_theme ts-message .message_content a.message_sender, #msg_input::-webkit-input-placeholder,
 ts-jumper input[type="text"]::-webkit-input-placeholder {
-  color: #aaa !important;
+  color: #7C879C !important;
 }
 
 #msg_input, #primary_file_button {
@@ -26,7 +26,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 .day_divider .day_divider_label {
-  color: #eee !important;
+  color: #7C879C !important;
 }
 
 .day_container .day_msgs {
@@ -34,7 +34,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 ts-message:hover, .day_divider .day_divider_label {
-  background: #282C34 !important;
+  background: #505868 !important;
 }
 
 #messages_container::after {
@@ -82,7 +82,7 @@ ts-message .action_hover_container .btn_msg_action,
 #flex_contents .subheading,
 #search_filters.files #filter_files, #search_filters.messages #filter_messages,
 .menu ul li a{
-  color: #eee !important;
+  color: #7C879C !important;
 }
 
 #quick_switcher_btn{
